@@ -22,6 +22,15 @@ console.log('Adding random items to basket array. ', addItem('Mangoes'));
 
 console.log('Adding zero items to basket array. [false] ', addItem());
 
-console.log('Checking the current items on "basket", ', basket);
+console.log('Checking the current items in "basket", ', basket);
 console.log('Function of adding item to basket Array is working properly as well as adding zero items in the parameters.');
+
+function listItems(array) {
+	console.log('Current items in your basket: ')
+	for (let i = 0; i < array.length; i++) {
+		console.log(array[i]);
+	}
+}
+
+listItems(basket); // Function Worked Properly.
 
