@@ -7,12 +7,13 @@ let basket = [];
 const maxItems = 5;
 
 function addItem(item) {
-	if (item) {
+	if (isFull(basket) != true) {
 		basket.push(item)
 		return true
 	}
-	else
+	else if (isFull(basket) == true) {
 		return false;
+	}
 }
 
 console.log('Adding item to basket array. ', addItem('Apple'));
@@ -39,7 +40,7 @@ function listItems(array) {
 listItems(basket); // Function Worked Properly.
 
 function empty(array) {
-	for (i = 0; i < array.length; i++) {
+	for (let i = 0; i < array.length; i++) {
 		array.pop();
 		empty(array);
 	}
@@ -66,5 +67,9 @@ console.log('Adding item to basket array. ', addItem('Pear'));
 console.log('Adding item to basket array. ', addItem('Cookie'));
 console.log('Adding item to basket array. ', addItem('Orange Juice'));
 console.log('Adding item to basket array. ', addItem('Yogurt'));
-console.log('Adding item to basket array. ', addItem('lettuce'));
+console.log('Adding item to basket array. ', addItem('Bread'));
+console.log('Adding item to basket array.[false] ', addItem('Chicken')); //items exceed the max items on basket.
+
+console.log('Chicken does not appear on the basket list : ', basket);
+
 
