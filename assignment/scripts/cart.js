@@ -73,3 +73,31 @@ console.log('Adding item to basket array.[false] ', addItem('Chicken')); //items
 console.log('Chicken does not appear on the basket list : ', basket);
 
 
+function removeItem(item) {
+	let itemIndex = basket.indexOf(item);
+
+	return itemIndex >= 0 ? basket.splice(itemIndex, 1) : null;
+}
+
+
+console.log('**********TESTING removeItem function***********');
+console.log('Called the listItems function for Basket to display the current items');
+listItems(basket);
+console.log('***************************************')
+console.log('Called the removeItems function for "Orange Juice."');
+removeItem("Orange Juice");
+console.log('***************************************')
+console.log('Calling listItem for basket, "Orange Juice should be removed from the basketlist "')
+listItems(basket);
+
+console.log('***************************************')
+
+console.log('Called the listItems function for Basket to display the current items');
+listItems(basket);
+console.log('***************************************')
+console.log('Called the removeItems function for "Yogurt."');
+removeItem("Yogurt");
+console.log('***************************************')
+console.log('Calling listItem for basket, "Yogurt" should be removed from the basketlist "')
+listItems(basket);
+
